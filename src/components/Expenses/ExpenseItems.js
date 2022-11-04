@@ -12,10 +12,10 @@ export default function ExpenseItems(props) {
   }
   
   return (
-    <Card className='expense-items p-3 d-flex flex-row align-items-center justify-content-between text-capitalize bg-secondary'>
+    <Card className='expense-items p-3 d-flex flex-row align-items-center justify-content-between text-capitalize'>
        <ExpenseDate date = {props.date}/>
        <span className='text-white fw-bold fs-4'>{title}</span>
-       <span className='fs-4 fw-bold border border-1 p-2 text-white bg-success'>{props.amount}</span>
+       <span className='fs-4 fw-bold border border-1 px-4 py-1 text-white bg-success'>{props.amount}</span>
        <button type="button" className='btn btn-primary' onClick={changeHandler}>Change Title</button>
     </Card>
   )

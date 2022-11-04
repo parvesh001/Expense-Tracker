@@ -34,7 +34,7 @@ export default function ExpenseForm() {
 
   return (
     <>
-    <form onSubmit={submitHandler} className="d-flex flex-column justify-content-between">
+    <form onSubmit={submitHandler} className="d-flex flex-column justify-content-between h-100">
       <div className="row">
         <div className="col">
           <label htmlFor="title" className="fw-bold mb-1">Title</label>

@@ -1,0 +1,25 @@
+Alternative to multiple state
+=> take it as reference with ExpenseForm component
+
+CODE:
+const [userInput, setUserInput] = useStates({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+});
+
+const titleHandeler = (event) => {
+    setUserInput(prevState => {
+        return {...prevState, enteredTitle:event.target.value}
+    })
+}
+const amountHandeler = (event) => {
+    setUserInput(prevState => {
+        return {...prevState, enteredAmount:event.target.value}
+    })
+}
+const dateHandeler = (event) => {
+    setUserInput(prevState => {
+        return {...prevState, enteredDate:event.target.value}
+    })
+}

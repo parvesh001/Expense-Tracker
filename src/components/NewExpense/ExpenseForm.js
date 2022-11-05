@@ -1,68 +1,95 @@
-import React, {useState} from "react";
-import './ExpenseForm.css'
+import React, { useState } from "react";
+import "./ExpenseForm.css";
 
 export default function ExpenseForm(props) {
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
-    
-    //Note:alternative to multiple state see, in KeyConcepts.txt file.
-    
-    const titleHandler = (event) => {
-        setEnteredTitle(event.target.value)
-    }
-    const amountHandeler = (event) => {
-        setEnteredAmount(event.target.value)
-    }
-    const dateHandeler = (event) => {
-        setEnteredDate(event.target.value)
-    }
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-    const submitHandler = (event) => {
-        event.preventDefault();
+  //Note:alternative to multiple state see, in KeyConcepts.txt file.
 
-        const expenseData = {
-            title:enteredTitle,
-            amount:enteredAmount,
-            date: new Date(enteredDate)
-        }
+  const titleHandler = (event) => {
+    setEnteredTitle(event.target.value);
+  };
+  const amountHandeler = (event) => {
+    setEnteredAmount(event.target.value);
+  };
+  const dateHandeler = (event) => {
+    setEnteredDate(event.target.value);
+  };
 
-        props.onSaveExpenseData(expenseData)
-        setEnteredTitle('');
-        setEnteredAmount('');
-        setEnteredDate('');
-    }
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    props.onSaveExpenseData(expenseData);
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  };
 
   return (
     <>
-    <form onSubmit={submitHandler} className="d-flex flex-column justify-content-between h-100">
-      <div className="row">
-        <div className="col mb-2">
-          <label htmlFor="title" className="fw-bold mb-1">Title</label>
+      <form
+        onSubmit={submitHandler}
+        className="d-flex flex-column justify-content-between h-100"
+      >
+        <div className="row">
+          <div className="col mb-2">
+            <label htmlFor="title" className="fw-bold mb-1">
+              Title
+            </label>
+            <input
+              id="title"
+              type="text"
+              className="form-control"
+              value={enteredTitle}
+              onChange={titleHandler}
+            />
+          </div>
+          <div className="col mb-2">
+            <label htmlFor="amount" className="fw-bold mb-1">
+              Amount
+            </label>
+            <input
+              id="amount"
+              type="text"
+              className="form-control"
+              value={enteredAmount}
+              onChange={amountHandeler}
+            />
+          </div>
+        </div>
+        <div className="mt-2">
+          <label htmlFor="date" className="d-block fw-bold mb-1">
+            Date
+          </label>
           <input
-          id="title"
-            type="text"
-            className="form-control"
-            value={enteredTitle}
-            onChange={titleHandler}
+            className="date rounded"
+            type="date"
+            name="date"
+            id="date"
+            onChange={dateHandeler}
+            value={enteredDate}
           />
         </div>
-        <div className="col mb-2">
-            <label htmlFor="amount" className="fw-bold mb-1">Amount</label>
-          <input
-          id="amount"
-            type="text"
-            className="form-control"
-            value={enteredAmount}
-            onChange={amountHandeler}
-          />
+        <div className="d-flex gap-3 justify-content-end">
+          <button
+            type="submit"
+            className="btn btn-success"
+            onClick={props.onCancel}
+          >
+            Cancel
+          </button>
+          <button type="submit" className="btn btn-success">
+            Add Expense
+          </button>
         </div>
-      </div>
-      <div className="mt-2">
-        <label htmlFor="date" className="d-block fw-bold mb-1">Date</label>
-        <input className="date rounded" type="date" name="date" id="date" onChange={dateHandeler} value={enteredDate}/>
-      </div>
-      <button type="submit" className="btn btn-success ms-auto">Add Expense</button>
       </form>
     </>
   );

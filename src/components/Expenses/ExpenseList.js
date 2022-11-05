@@ -9,17 +9,20 @@ export default function ExpenseList(props) {
   }
 
   if (props.expenses.length > 0) {
-    return props.expenses.map((expense) => {
-      return (
-        <ul className="m-0 p-0">
-          <ExpenseItems
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        </ul>
-      );
-    });
+    return (
+       <ul className="m-0 p-0">
+        {props.expenses.map((expense) => {
+            return (
+                <ExpenseItems
+                  key={expense.id}
+                  title={expense.title}
+                  amount={expense.amount}
+                  date={expense.date}
+                />
+            
+            );
+          })}
+       </ul>
+    )
   }
 }

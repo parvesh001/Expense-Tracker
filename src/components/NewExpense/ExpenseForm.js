@@ -37,7 +37,7 @@ export default function ExpenseForm(props) {
     <>
     <form onSubmit={submitHandler} className="d-flex flex-column justify-content-between h-100">
       <div className="row">
-        <div className="col">
+        <div className="col mb-2">
           <label htmlFor="title" className="fw-bold mb-1">Title</label>
           <input
           id="title"
@@ -47,7 +47,7 @@ export default function ExpenseForm(props) {
             onChange={titleHandler}
           />
         </div>
-        <div className="col">
+        <div className="col mb-2">
             <label htmlFor="amount" className="fw-bold mb-1">Amount</label>
           <input
           id="amount"
@@ -58,7 +58,7 @@ export default function ExpenseForm(props) {
           />
         </div>
       </div>
-      <div>
+      <div className="mt-2">
         <label htmlFor="date" className="d-block fw-bold mb-1">Date</label>
         <input className="date rounded" type="date" name="date" id="date" onChange={dateHandeler} value={enteredDate}/>
       </div>

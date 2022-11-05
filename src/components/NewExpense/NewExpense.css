@@ -1,6 +1,6 @@
 .new-expense{
     width:70vw;
-    height:17rem;
+    height:fit-content;
     background-color: rgb(111, 111, 231);
     margin-top: 4rem;
     margin-bottom: 4rem;

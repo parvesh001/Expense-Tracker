@@ -35,7 +35,6 @@ function App() {
       ]
     })
   }
-
   return (
     <>
       <NewExpense onAddExpense={addExpenseHandeler}/>

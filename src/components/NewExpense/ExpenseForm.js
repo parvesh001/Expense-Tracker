@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
+import Buttons from "./Buttons";
+import AddButton from "./AddButton";
 
 export default function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -33,9 +35,14 @@ export default function ExpenseForm(props) {
     setEnteredDate("");
   };
 
+  const [expended, setExpended] = useState(false);
+  const expendHandler = (value)=> {
+    setExpended(value)
+  }
+
   return (
     <>
-      <form
+      {expended && <form
         onSubmit={submitHandler}
         className="d-flex flex-column justify-content-between h-100"
       >
@@ -78,19 +85,9 @@ export default function ExpenseForm(props) {
             value={enteredDate}
           />
         </div>
-        <div className="d-flex gap-3 justify-content-end">
-          <button
-            type="submit"
-            className="btn btn-success"
-            onClick={props.onCancel}
-          >
-            Cancel
-          </button>
-          <button type="submit" className="btn btn-success">
-            Add Expense
-          </button>
-        </div>
-      </form>
+        <Buttons onExpend={expendHandler}/>
+      </form>}
+      {!expended && <AddButton onExpend={expendHandler}/>}
     </>
   );
 }

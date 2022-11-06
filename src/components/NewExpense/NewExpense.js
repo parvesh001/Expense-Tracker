@@ -15,7 +15,7 @@ export default function NewExpense(props) {
   
   return (
     <Card className="new-expense p-3">
-      <ExpenseForm/>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandeler}/>
     </Card>
   );
 }

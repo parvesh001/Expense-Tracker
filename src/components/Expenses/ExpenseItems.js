@@ -10,7 +10,7 @@ export default function ExpenseItems(props) {
         <ExpenseDate date={props.date} />
         <span className="text-white fw-bold fs-4">{props.title}</span>
         <span className="fs-4 fw-bold border border-1 px-4 py-1 text-white bg-success">
-          {props.amount}
+          ${props.amount}
         </span>
       </Card>
     </li>

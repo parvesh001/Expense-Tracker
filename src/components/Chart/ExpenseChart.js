@@ -22,7 +22,6 @@ export default function ExpenseChart(props) {
     expenseChartDataPoints[month].value = dataPoint.amount;
    }
    
-
   return (
     <Chart dataPoints={expenseChartDataPoints}/>
   )

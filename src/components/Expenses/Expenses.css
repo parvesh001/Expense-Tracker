@@ -1,5 +1,6 @@
 .expenses{
     height: fit-content;
     width: 70vw;
-    background: #000;
+    background: hsl(0 0% 100%/.1);
+    backdrop-filter: blur(.2rem);
 }

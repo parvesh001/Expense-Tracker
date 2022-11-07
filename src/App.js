@@ -12,13 +12,13 @@ const expenses = [
   },
   {
     id:'0.03',
-    title: "chowmen",
+    title: "sandwich",
     amount: 10,
     date: new Date(2020, 2, 16),
   },
   {
     id:'000.2',
-    title: "sandwich",
+    title: "cock",
     amount: 30,
     date: new Date(2021, 3, 17),
   },
@@ -26,13 +26,13 @@ const expenses = [
     id:'000.3',
     title: "Pizza",
     amount: 20,
-    date: new Date(2021, 4, 17),
+    date: new Date(2019, 4, 17),
   },
   {
     id:'000.4',
-    title: "Chowmean",
+    title: "shake",
     amount: 40,
-    date: new Date(2021, 5, 17),
+    date: new Date(2019, 5, 17),
   },
 ];
 
